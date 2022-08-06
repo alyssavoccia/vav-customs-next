@@ -1,8 +1,10 @@
-import React from 'react'
+import Hero from "../components/Hero";
 
 const LandingPage = () => {
   return (
-    <div>index</div>
+    <>
+      <Hero />
+    </>
   )
 }
 

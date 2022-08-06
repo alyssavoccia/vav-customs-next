@@ -36,7 +36,7 @@ const MainNav = () => {
               <span className={navStyles.cartCount}>1</span>
             </div>
           </ul>
-          <div className={navStyles.mobileIcon}>
+          <div className={navStyles.toggler}>
             <div className={navStyles.line1}></div>
             <div className={navStyles.line2}></div>
             <div className={navStyles.line3}></div>
