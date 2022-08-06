@@ -1,0 +1,92 @@
+.navbar {
+  background-color: #222;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  height: 75px;
+  padding: 0 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbarContent {
+  align-items: center;
+  display: flex;
+  height: inherit;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.logoWrapper img {
+  cursor: pointer;
+  height: 35px !important;
+  width: auto !important;
+}
+
+.menu {
+  align-items: center;
+  background-color: #222;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100vh;
+  justify-content: flex-start;
+  list-style: none;
+  padding-top: 1rem;
+  position: fixed;
+  right: 0;
+  top: 75px;
+  transform: translateX(100%);
+  transition: .5s ease-in;
+  width: 100%;
+}
+
+.menu.active {
+  transform: translateX(0%);
+}
+
+.menu a:hover {
+  color: #C6AC8F;
+}
+
+.viewCart {
+  cursor: pointer;
+  position: relative;
+}
+
+.viewCart:hover img,
+.viewCart:hover span {
+  color: #C6AC8F;
+}
+
+.viewCart img {
+  fill: #FFF !important;
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.cartCount {
+  font-size: 10px;
+  font-weight: 800;
+  position: absolute;
+  right: .9rem;
+  top: .35rem;
+  z-index: 10000;
+}
+
+/* =========================================================================== */
+/* MEDIA QUERIES */
+/* =========================================================================== */
+@media (min-width: 769px) {
+  .menu {
+    background-color: transparent;
+    flex-direction: row;
+    height: 75px;
+    padding-top: 0;
+    position: relative;
+    transform: translateX(0%);
+    top: 0;
+    max-width: 1200px;
+  }
+}
