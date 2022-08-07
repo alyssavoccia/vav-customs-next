@@ -14,22 +14,22 @@ const MainNav = () => {
         <div>
           <ul className={navStyles.menu}>
             <li>
-              <Link href='/#about'>About</Link>
+              <Link href='#about'>About</Link>
             </li>
             <li>
-              <Link href='/#about'>Gallery</Link>
+              <Link href='#!'>Gallery</Link>
             </li>
             <li>
-              <Link href='/#about'>The Shop</Link>
+              <Link href='#!'>The Shop</Link>
             </li>
             <li>
-              <Link href='/#about'>Blog</Link>
+              <Link href='#!'>Blog</Link>
             </li>
             <li>
-              <Link href='/#about'>Custom Build</Link>
+              <Link href='#!'>Custom Build</Link>
             </li>
             <li>
-              <Link href='/#about'>Store</Link>
+              <Link href='#!'>Store</Link>
             </li>
             <div className={navStyles.viewCart}>
               <Image src={CartIcon} alt='Shopping cart icon' />

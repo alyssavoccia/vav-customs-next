@@ -13,13 +13,12 @@
   height: 100% !important;
 }
 
-.hero img {
-  height: auto !important;
-  width: 100% !important;
+.logoContainer {
+  width: 80% !important;
 }
 
-@media (min-width: 769px) {
-  .hero img {
-    height: 80% !important;
+@media (min-width: 900px) {
+  .logoContainer {
+    width: 60% !important;
   }
 }
