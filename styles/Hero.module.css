@@ -19,7 +19,7 @@
 
 @media (min-width: 900px) {
   .logoContainer {
-    width: 75% !important;
+    width: 60% !important;
     max-width: 1400px;
   }
 }
