@@ -9,7 +9,7 @@
   align-items: center;
   display: grid;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 400;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-template-rows: auto-fill;
@@ -36,7 +36,7 @@
 
 .titleContainer {
   margin: 0 auto;
-  max-width: 290px;
+  max-width: 260px;
 }
 
 @media (min-width: 1150px) {
