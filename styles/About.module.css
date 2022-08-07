@@ -34,12 +34,9 @@
   grid-row: 1;
 }
 
-.section-title:after {
-  width: 250px;
-}
-
-.info p {
-  line-height: 1.5;
+.titleContainer {
+  margin: 0 auto;
+  max-width: 290px;
 }
 
 @media (min-width: 1150px) {
