@@ -55,23 +55,23 @@
   position: relative;
 }
 
-.viewCart:hover img,
-.viewCart:hover span {
+.viewCart:hover svg {
   color: #C6AC8F;
 }
 
-.viewCart img {
-  fill: #FFF !important;
-  height: 30px !important;
-  width: 30px !important;
+.viewCart svg {
+  fill: #FFF;
+  height: 25px;
+  width: 25px;
 }
 
 .cartCount {
+  color: #222;
   font-size: 10px;
   font-weight: 800;
   position: absolute;
-  right: .9rem;
-  top: .35rem;
+  right: .55rem;
+  top: .17rem;
   z-index: 10000;
 }
 

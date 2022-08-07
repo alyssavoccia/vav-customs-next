@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ReactElement } from "react";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavLogo from '../static/mini-logo.png';
 import CartIcon from '../static/shopping-cart.png';
 import navStyles from '../styles/MainNav.module.css';
@@ -32,7 +35,7 @@ const MainNav = () => {
               <Link href='#!'>Store</Link>
             </li>
             <div className={navStyles.viewCart}>
-              <Image src={CartIcon} alt='Shopping cart icon' />
+              <FontAwesomeIcon className={navStyles.CartIcon} icon={faCartShopping} />
               <span className={navStyles.cartCount}>1</span>
             </div>
           </ul>
