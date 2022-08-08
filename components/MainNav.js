@@ -15,22 +15,22 @@ const MainNav = () => {
         <div>
           <ul className={styles.menu}>
             <li>
-              <Link href='#about'>About</Link>
+              <Link href='/#about'>About</Link>
             </li>
             <li>
-              <Link href='#gallery'>Gallery</Link>
+              <Link href='/#gallery'>Gallery</Link>
             </li>
             <li>
-              <Link href='#!'>The Shop</Link>
+              <Link href='/the-shop'>The Shop</Link>
             </li>
             <li>
-              <Link href='#!'>Blog</Link>
+              <Link href='/blog'>Blog</Link>
             </li>
             <li>
-              <Link href='#!'>Custom Build</Link>
+              <Link href='/custom-build'>Custom Build</Link>
             </li>
             <li>
-              <Link href='#!'>Store</Link>
+              <Link href='/store'>Store</Link>
             </li>
             <div className={styles.viewCart}>
               <FontAwesomeIcon className={styles.CartIcon} icon={faCartShopping} />

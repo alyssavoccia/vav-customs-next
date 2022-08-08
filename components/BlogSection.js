@@ -9,7 +9,7 @@ const BlogSection = () => {
           <p className={styles.contentTextMain}>Interested in reading more?</p>
           <p>Check out my blog!</p>
         </div>
-        <Link href='#!'>
+        <Link href='/blog'>
           <a className='btn btn-primary'>See Blog Posts</a>
         </Link>
       </div>
