@@ -1,6 +1,8 @@
+import styles from '../styles/TheShop.module.css';
+
 const TheShop = () => {
   return (
-    <div>Check out The Shop!</div>
+    <section className={styles.theShop}>Check out The Shop!</section>
   )
 }
 
