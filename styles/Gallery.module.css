@@ -2,7 +2,7 @@
   background-color: #eae0d5;
   background-image: url("https://www.transparenttextures.com/patterns/purty-wood.png");
   margin-top: 6rem;
-  padding: 3rem 0;
+  padding: 3rem 1.5rem;
 }
 
 .socialMedia {
@@ -31,7 +31,6 @@
   column-gap: 1em;
   height: 100%;
   margin: 2rem auto;
-  padding: 0 1.5rem;
   max-width: 1100px;
 }
 

@@ -21,7 +21,7 @@ const Gallery = () => {
         {GalleryData.map((img, i) => {
           return (
             <div className={styles.itemContainer} key={i}>
-              <img layout="fill" objectFit="contain" src={img.src} alt={img.alt} />
+              <img src={img.src} alt={img.alt} />
             </div>
           )
         })}
