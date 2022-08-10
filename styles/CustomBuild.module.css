@@ -103,13 +103,27 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-content: center;
   margin-bottom: 2rem;
-  padding: 0 1rem;
+  padding: 0;
   width: 100%;
-  max-width: 750px;
+}
+
+.whyBlockP {
+  font-size: 1.1rem;
+  margin-top: 1rem;
 }
 
 @media (max-width: 684px) {
+  .whyBlockSection {
+    text-align: center;
+  }
+
   .moveBottom {
     order: 2;
+  }
+}
+
+@media (max-width: 800px) {
+  .whyBlockSection {
+    padding: 0 1rem;
   }
 }
