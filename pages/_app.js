@@ -1,11 +1,14 @@
+import { BlogProvider } from '../context/blog/BlogContext';
 import Layout from '../components/Layout';
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <BlogProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </BlogProvider>
   )
 }
 
