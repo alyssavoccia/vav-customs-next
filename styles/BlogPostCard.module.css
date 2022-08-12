@@ -1,0 +1,80 @@
+.card {
+  background-color: #F5F5F5;
+  border-radius: .25rem;
+  text-align: left;
+  width: 300px;
+}
+
+.cardImg {
+  display: block;
+  position: relative;
+}
+
+.cardImg img {
+  border-radius: .25rem .25rem 0 0;
+  overflow-y: hidden;
+}
+
+.imgTag {
+  bottom: 7px;
+  font-size: .7rem;
+  font-weight: 700;
+  height: 25px;
+  line-height: 20px;
+  left: 0;
+  padding: .25rem .5rem;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.tutorial {
+  background-color: #94A3B8;
+}
+
+.woodworking {
+  background-color: #C6AC8F;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  height: 175px;
+  margin-top: auto;
+  padding: 1rem;
+}
+
+.cardBody h2 {
+  align-items: center;
+  display: flex;
+  margin-bottom: .5rem;
+}
+
+.cardBody span {
+  align-items: center;
+  color: #525252;
+  font-size: .8rem;
+  margin-left: .5rem;
+}
+
+.cardBody p {
+  margin-bottom: 1rem;
+}
+
+.cardBtn {
+  align-self: flex-start;
+  background-color: #222;
+  border: none;
+  border-radius: .25rem;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: .8rem;
+  margin-top: auto;
+  padding: .5rem .75rem;
+  text-transform: uppercase;
+  transition: all .1s ease-in;
+}
+
+.cardBtn:hover {
+  background-color: #4E4E4E;
+}

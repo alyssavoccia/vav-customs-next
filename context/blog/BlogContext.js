@@ -1,7 +1,6 @@
 import { createContext, useReducer, useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
-import blogReducer from './blogReducer';
 
 const BlogContext = createContext();
 
@@ -21,10 +20,8 @@ export const BlogProvider = ({ children }) => {
     fetchBlogPosts();
   }, []);
 
-  const [state, dispatch] = useReducer(blogReducer, blogPosts);
-
   return (
-    <BlogContext.Provider value={{ ...state, dispatch }}>
+    <BlogContext.Provider value={{ blogPosts }}>
       {children}
     </BlogContext.Provider>
   )
