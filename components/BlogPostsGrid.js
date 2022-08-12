@@ -16,7 +16,7 @@ const BlogPostsGrid = () => {
   return (
     <section className={styles.blogPosts}>
       {orderedBlogPosts && orderedBlogPosts.length > 0
-        ? <div>
+        ? <div className={styles.gridCards}>
             {orderedBlogPosts.map(blog => (
               <BlogPostCard key={blog.title} blog={blog} />
             ))}

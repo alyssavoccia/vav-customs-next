@@ -1,3 +1,16 @@
+.blogPosts {
+  margin: 2rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.gridCards {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+  justify-content: center;
+}
+
 .noItems {
   margin: 2rem 0;
   text-align: center;
