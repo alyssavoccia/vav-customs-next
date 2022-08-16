@@ -10,7 +10,7 @@ const MainNav = () => {
     <nav className={styles.navbar}>
       <div className={styles.navbarContent}>
         <div className={styles.logoWrapper}>
-          <Link href='/'><Image src={NavLogo} alt='VAV Customs Logo' /></Link>
+          <Link href='/' passHref><div><Image src={NavLogo} alt='VAV Customs Logo' /></div></Link>
         </div>
         <div>
           <ul className={styles.menu}>
