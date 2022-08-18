@@ -36,10 +36,10 @@ const BlogPost = () => {
             <h1 className={styles.blogPostTitle}>{blogPost.title}</h1>
             <span className={styles.blogPostInfo}>{blogPost.category} | {blogPost.timestamp.toDate().toDateString()}</span>
             <div className={styles.blogPostImg}>
-              <Image src={blogPost.imgUrl} width={600} height={350} alt="Blog post image" />
+              <Image src={blogPost.imgUrl} width={1200} height={500} objectFit='cover' alt="Blog post image" />
             </div>
           </div>
-          <div className={styles.contentBody} dangerouslySetInnerHTML={{ __html: blogPost.body}}></div>
+          <div className={styles.blogPostBody} dangerouslySetInnerHTML={{ __html: blogPost.body}}></div>
         </article>
       </div>
     </section>
