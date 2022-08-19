@@ -14,15 +14,16 @@
 }
 
 .blogPostHeader {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
 .blogPostTitle {
   font-size: 4rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .blogPostTitle,
@@ -32,6 +33,7 @@
 }
 
 .blogPostImg {
+  margin-bottom: 3rem;
   object-fit: cover;
   max-width: 100%;
 }
@@ -41,6 +43,11 @@
   max-width: 800px;
 }
 
+.blogPostBody h2 {
+  line-height: 20px;
+  margin: 2rem 0 .5rem;
+}
+
 .blogPostBody p {
   margin-bottom: 2rem;
 }
@@ -48,4 +55,9 @@
 .blogPostBody p span {
   font-size: 1.2rem !important;
   line-height: 1.6 !important;
+}
+
+.blogPostBody ol,
+.blogPostBody ul {
+  margin: .5rem 0 .5rem 1.1rem;
 }
