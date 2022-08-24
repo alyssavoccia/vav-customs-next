@@ -85,6 +85,25 @@ a {
   transform: translateX(4px);
 }
 
+.btn-secondary {
+  padding: 0;
+}
+
+.btn-secondary::before {
+  display: inline-block;
+  content: "\2190	";
+  padding-right: .25rem;
+  transition: transform .3s ease-out;
+}
+
+.btn-secondary:hover {
+  color: #4E4E4E;
+}
+
+.btn-secondary:hover.btn-secondary::before {
+  transform: translateX(-4px);
+}
+
 .page-section {
   padding: 4rem 0;
 }

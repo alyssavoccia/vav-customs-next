@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from 'next/link';
 import Image from "next/image";
 import BlogContext from "../../../context/blog/BlogContext";
+import BlogSidebar from "../../../components/BlogSidebar";
 import styles from '../../../styles/BlogPost.module.css';
 
 const BlogPost = () => {
@@ -29,7 +30,7 @@ const BlogPost = () => {
 
   return (
     <section className={`${styles.container} page-section`}>
-      <Link className='btn btn-secondary' href='/blog'>Back to Blog Posts</Link>
+      <Link href='/blog'><a className='btn btn-secondary'>Back to Blog Posts</a></Link>
       <div className={styles.blogPost}>
         <article className={styles.blogPostContent}>
           <div className={styles.blogPostHeader}>
@@ -41,6 +42,9 @@ const BlogPost = () => {
           </div>
           <div className={styles.blogPostBody} dangerouslySetInnerHTML={{ __html: blogPost.body}}></div>
         </article>
+        <div className={styles.sidebar}>
+          <BlogSidebar category={blogPost.category} currentBlog={blogPost.title} />
+        </div>
       </div>
     </section>
   )
