@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import CartContext from "../context/cart/CartContext";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavLogo from '../static/mini-logo.png';
 import styles from '../styles/MainNav.module.css';
 
 const MainNav = () => {
+  const { dispatch, totalItemsInCart } = useContext(CartContext);
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarContent}>
@@ -32,9 +35,9 @@ const MainNav = () => {
             <li>
               <Link href='/store'>Store</Link>
             </li>
-            <div className={styles.viewCart}>
+            <div className={styles.viewCart} onClick={() => dispatch({ type: 'OPEN_CART' })}>
               <FontAwesomeIcon className={styles.CartIcon} icon={faCartShopping} />
-              <span className={styles.cartCount}>1</span>
+              <span className={styles.cartCount}>{totalItemsInCart}</span>
             </div>
           </ul>
           <div className={styles.toggler}>

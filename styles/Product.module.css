@@ -1,0 +1,89 @@
+.product {
+  height: 100%;
+  justify-self: center;
+  width: 310px;
+}
+
+.card {
+  align-content: space-between;
+  display: grid;
+  height: 100%;
+}
+
+.imgContainer {
+  min-height: 250px;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.cardTitle {
+  color: #36454F;
+  font-size: .9rem;
+  letter-spacing: 1.5px;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.cardPrice {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.cardDescription {
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.cardBuy {
+  align-items: center;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+.cardBuyInfo {
+  font-weight: 500;
+}
+
+.cardQuantity {
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 5px;
+  text-align: center;
+  width: 75px;
+}
+
+.cardQuantity:focus {
+  outline: none;
+}
+
+.cardBtn {
+  background-color: #c6ac8f;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  padding: 10px 17px;
+}
+
+.cardBtnBuy {
+  cursor: pointer;
+  transition: all ease-in .2s;
+}
+
+.cardBtnBuy:hover {
+  background-color: #EAE0D5;
+}
+
+.cardBtnBuy::after {
+  display: inline-block;
+  padding-left: .5rem;
+  content: "\0279E";
+  transition: transform 0.3s ease-out;
+}
+
+.cardBtnBuy:hover::after {
+  transform: translateX(4px);
+}
