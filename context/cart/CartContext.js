@@ -1,57 +1,45 @@
-import { createContext, useContext, useEffect, useReducer, useState } from "react";
-import {initialState } from './cartReducer';
-import cartReducer from "./cartReducer";
-// import { client } from "../../utils/shopifyStore";
-// import Client from "shopify-buy";
+import { createContext, useEffect, useReducer } from "react";
+import { cartReducer } from './cartReducer';
 import { client } from "../../utils/shopifyStore";
+import { updateTotalItemsInCart } from "./CartActions";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const initialState = {
     isCartOpen: false,
-    checkout: { lineItems: [] },
-    client: {},
+    checkout: null,
+    client: client,
     totalItemsInCart: 0
   };
-  const [cart, setCart] = useState(initialState);
+
+  const [state, dispatch] = useReducer(cartReducer, initialState);
+
+  const createCheckout = async () => {
+    const checkout = await client.checkout.create();
+    localStorage.setItem("checkout_id", checkout.id);
+    dispatch({ type: 'CHECKOUT_FOUND', payload: checkout })
+  };
+
+  const updateCartItemsLength = async (checkout) => {
+    const totalItems = await updateTotalItemsInCart(checkout);
+    dispatch({ type: 'UPDATE_TOTAL_ITEMS_IN_CART', payload: {items: totalItems}});
+  };
+
+  const fetchCheckout = async (checkoutId) => {
+    client.checkout.fetch(checkoutId).then((checkout) => {
+      dispatch({ type: 'CHECKOUT_FOUND', payload: checkout });
+      updateCartItemsLength(checkout);
+    });
+  }
 
   useEffect(() => {
-    // Check if the user has visited the site before
-    // If not, creates checkout
-    if (!localStorage.getItem('userCart')) {
-      // Dispatch client to state
-      dispatch({ type: 'CLIENT_CREATED', payload: client});
-      setCart(prevState => ({...prevState, client: client}));
-      // Set up checkout
-      client.checkout.create().then(res => {
-        dispatch({ type: 'CHECKOUT_FOUND', payload: res});
-        setCart(prevState => ({...prevState, checkout: res}));
-      });
-
-      localStorage.setItem('userCart', JSON.stringify(cart));
+    if (localStorage.checkout_id) {
+      fetchCheckout(localStorage.checkout_id);
+    } else {
+      createCheckout();
     }
-
-    // if (cart !== initialState) {
-    //   localStorage.setItem('userCart', JSON.stringify(cart));
-    // }
-  }, [cart]);
-
-  const [state, dispatch] = useReducer(cartReducer, cart === initialState ? initialState : cart);
-
-  useEffect(() => {
-    const cartData = JSON.parse(localStorage.getItem('userCart'));
-    if (cartData) {
-      setCart(cartData);
-      setCart(prevState => ({...prevState, client: client}));
-      // Dispatch client to state
-      dispatch({ type: 'UPDATE_USER_CART', payload: cart});
-    }
-  }, [state]);
-
-  useEffect(() => {
-    localStorage.setItem('userCart', JSON.stringify(state));
-  }, [state]);
+  }, []);
 
   return (
     <CartContext.Provider

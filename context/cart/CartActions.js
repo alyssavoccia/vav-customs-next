@@ -3,7 +3,6 @@ export const updateTotalItemsInCart = async (checkout) => {
 };
 
 export const addItemToCart = async (client, checkout, variantId, quantity) => {
-  console.log(checkout)
   const lineItemsToAdd = [{variantId, quantity: parseInt(quantity, 10)}];
   const checkoutId = checkout.id;
 

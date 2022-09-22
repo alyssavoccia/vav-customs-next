@@ -1,15 +1,5 @@
-const cartReducer = (state, action) => {
+export const cartReducer = (state, action) => {
   switch (action.type) {
-    case 'UPDATE_USER_CART':
-      return {
-        ...state,
-        ...action.payload
-      }
-    case 'CLIENT_CREATED':
-      return {
-        ...state,
-        client: action.payload
-      }
     case 'CHECKOUT_FOUND':
       return {
         ...state,
@@ -50,5 +40,3 @@ const cartReducer = (state, action) => {
       return state;
   }
 };
-
-export default cartReducer;
