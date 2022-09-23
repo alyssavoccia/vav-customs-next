@@ -2,12 +2,12 @@ import { useEffect, useState, useContext } from "react";
 import { useRouter } from "next/router";
 import Link from 'next/link';
 import Image from "next/image";
-import BlogContext from "../../../context/blog/BlogContext";
+import { loadPosts } from "../../api/LoadPosts";
 import BlogSidebar from "../../../components/BlogSidebar";
 import styles from '../../../styles/BlogPost.module.css';
 
-const BlogPost = () => {
-  const { blogPosts } = useContext(BlogContext);
+const BlogPost = (props) => {
+  const blogPosts = props.posts;
   const [loading, setLoading] = useState(true);
   const [blogPost, setBlogPost] = useState(null);
   let {query} = useRouter();
@@ -17,7 +17,6 @@ const BlogPost = () => {
       const currentTitle = query.title.indexOf('-') === -1 ? query.title : query.title.split('-').join(' ');
       const currentBlog = blogPosts.filter(item => item.title === currentTitle);
       setBlogPost(currentBlog[0]);
-
       if (blogPost) {
         setLoading(false);
       }
@@ -35,7 +34,7 @@ const BlogPost = () => {
         <article className={styles.blogPostContent}>
           <div className={styles.blogPostHeader}>
             <h1 className={styles.blogPostTitle}>{blogPost.title}</h1>
-            <span className={styles.blogPostInfo}>{blogPost.category} | {blogPost.timestamp.toDate().toDateString()}</span>
+            {/* <span className={styles.blogPostInfo}>{blogPost.category} | {blogPost.timestamp.toDate().toDateString()}</span> */}
           </div>
           <div className={styles.blogPostImg}>
             <Image src={blogPost.imgUrl} width={1200} height={500} objectFit='cover' alt="Blog post image" />
@@ -43,11 +42,34 @@ const BlogPost = () => {
           <div className={styles.blogPostBody} dangerouslySetInnerHTML={{ __html: blogPost.body}}></div>
         </article>
         <div className={styles.sidebar}>
-          <BlogSidebar category={blogPost.category} currentBlog={blogPost.title} />
+          <BlogSidebar category={blogPost.category} currentBlog={blogPost.title} blogPosts={blogPosts} />
         </div>
       </div>
     </section>
   )
+}
+
+export const getStaticProps = async () => {
+  const blogPosts = await loadPosts();
+
+  return {
+    props: {posts: JSON.parse(JSON.stringify(blogPosts)) || null}
+  };
+};
+
+export const getStaticPaths = async () => {
+  const blogPosts = await loadPosts();
+
+  const titles = blogPosts.map(post => {
+    return post.title.split(' ').join('-');
+  });
+
+  const paths = titles.map(title => ({ params: {title}}));
+
+  return {
+    paths,
+    fallback: false
+  }
 }
 
 export default BlogPost;

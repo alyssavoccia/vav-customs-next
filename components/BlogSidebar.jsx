@@ -1,10 +1,8 @@
 import { useEffect, useState, useContext } from 'react';
 import Link from 'next/link';
-import BlogContext from '../context/blog/BlogContext';
 import styles from '../styles/BlogSidebar.module.css';
 
-const BlogSidebar = ({ category, currentBlog }) => {
-  const { blogPosts } = useContext(BlogContext);
+const BlogSidebar = ({ category, currentBlog, blogPosts }) => {
   const [similarPosts, setSimilarPosts] = useState(null);
   const [recentPosts, setRecentPosts] = useState(null);
 

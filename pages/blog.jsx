@@ -1,5 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+import { loadPosts } from "./api/LoadPosts";
 import BlogPostsGrid from '../components/BlogPostsGrid';
 import styles from '../styles/Blog.module.css';
 
@@ -17,12 +16,7 @@ const blog = (props) => {
 }
 
 export const getStaticProps = async () => {
-    const blogPostsRef = collection(db, 'blogPosts');
-    const querySnap = await getDocs(blogPostsRef);
-
-    const blogPosts = querySnap.docs.map(doc => {
-      return doc.data();
-    });
+  const blogPosts = await loadPosts();
 
   return {
     props: {posts: JSON.parse(JSON.stringify(blogPosts)) || null}
