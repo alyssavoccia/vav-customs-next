@@ -48,7 +48,7 @@ const Store = (props) => {
             <li key={item.title} className={`${item.id === selected && styles.active}`} onClick={() => setSelected(item.id)}>{item.title}</li>
           ))}
         </ul>
-        <Products products={props.products} />
+        <Products products={props.products} selectedProducts={selected} />
       </div>
     </section>
   )
