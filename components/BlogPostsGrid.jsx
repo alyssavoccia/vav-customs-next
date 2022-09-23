@@ -1,12 +1,11 @@
 import { useEffect, useState, useContext } from 'react';
-import BlogContext from '../context/blog/BlogContext';
 import BlogPostCard from './BlogPostCard';
 import styles from '../styles/BlogPostsGrid.module.css';
 
-const BlogPostsGrid = () => {
-  const { blogPosts } = useContext(BlogContext);
+const BlogPostsGrid = (posts) => {
+  const blogPosts = posts.posts;
   const [orderedBlogPosts, setOrderedBlogPosts] = useState(null);
-
+  
   useEffect(() => {
     if (blogPosts) {
       setOrderedBlogPosts(blogPosts.sort((a, b) => b.timestamp - a.timestamp));
