@@ -1,5 +1,6 @@
 import MainNav from "./MainNav";
 import Footer from "./Footer";
+import Cart from "./shopify/Cart";
 import styles from '../styles/Layout.module.css';
 
 const Layout = ({ children }) => {
@@ -10,6 +11,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
       <Footer />
+      <Cart />
     </>
   )
 }
