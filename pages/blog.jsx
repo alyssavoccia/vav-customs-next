@@ -19,7 +19,8 @@ export const getStaticProps = async () => {
   const blogPosts = await loadPosts();
 
   return {
-    props: {posts: JSON.parse(JSON.stringify(blogPosts)) || null}
+    props: {posts: JSON.parse(JSON.stringify(blogPosts)) || null},
+    revalidate: 10
   };
 };
 

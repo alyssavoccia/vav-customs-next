@@ -44,7 +44,7 @@
   flex-direction: column;
   margin-top: 2rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
 }
 
 .formInput {
@@ -86,44 +86,59 @@
 .whyBlock {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   justify-content: center;
   margin: 0 auto 5rem auto;
   width: 100%;
-  max-width: 800px;
+  max-width: 1100px;
+}
+
+.textSection,
+.imageSection {
+  flex: 1;
 }
 
 .whyBlockTitle {
   margin-bottom: 2rem;
-  text-align: center;
 }
 
-.whyBlockSection {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  justify-content: center;
-  margin-bottom: 2rem;
-  padding: 0;
-  width: 100%;
+.textSecondary {
+  color: #4e4e4e;
+}
+
+.whyBlockText {
+  margin-bottom: 1.5rem;
 }
 
 .whyBlockP {
   font-size: 1.1rem;
-  margin-top: 1rem;
+  margin-top: .5rem;
 }
 
-@media (max-width: 684px) {
-  .whyBlockSection {
-    text-align: center;
-  }
+.imageSection {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
 
-  .moveBottom {
-    order: 2;
+.whyBlockImages {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: column;
+}
+
+@media (min-width: 767px) {
+  .whyBlock {
+    align-items: center;
+    flex-direction: row;
   }
 }
 
-@media (max-width: 800px) {
-  .whyBlockSection {
+@media (max-width: 1150px) {
+  .whyBlock {
     padding: 0 1rem;
   }
 }

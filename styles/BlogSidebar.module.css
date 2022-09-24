@@ -1,0 +1,11 @@
+.sidebar {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 20px 10px;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    margin-top: 10rem;
+  }
+}
