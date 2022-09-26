@@ -10,6 +10,7 @@ const BlogPost = (props) => {
   const blogPosts = props.posts;
   const [loading, setLoading] = useState(true);
   const [blogPost, setBlogPost] = useState(null);
+  const [blogDate, setBlogDate] = useState(null);
   let {query} = useRouter();
 
   useEffect(() => {
@@ -34,16 +35,18 @@ const BlogPost = (props) => {
         <article className={styles.blogPostContent}>
           <div className={styles.blogPostHeader}>
             <h1 className={styles.blogPostTitle}>{blogPost.title}</h1>
-            {/* <span className={styles.blogPostInfo}>{blogPost.category} | {blogPost.timestamp.toDate().toDateString()}</span> */}
+            <span className={styles.blogPostInfo}>{blogPost.category} | </span>
           </div>
           <div className={styles.blogPostImg}>
             <Image src={blogPost.imgUrl} width={1200} height={500} objectFit='cover' alt="Blog post image" />
           </div>
-          <div className={styles.blogPostBody} dangerouslySetInnerHTML={{ __html: blogPost.body}}></div>
+          <div className={styles.blogPostMain}>
+            <div className={styles.blogPostBody} dangerouslySetInnerHTML={{ __html: blogPost.body}}></div>
+            <div className={styles.sidebar}>
+              <BlogSidebar category={blogPost.category} currentBlog={blogPost.title} blogPosts={blogPosts} />
+            </div>
+          </div>
         </article>
-        <div className={styles.sidebar}>
-          <BlogSidebar category={blogPost.category} currentBlog={blogPost.title} blogPosts={blogPosts} />
-        </div>
       </div>
     </section>
   )

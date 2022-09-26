@@ -16,7 +16,7 @@ const BlogSidebar = ({ category, currentBlog, blogPosts }) => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.section}>
-        <h3>Similar Posts</h3>
+        <h3 className={styles.sectionTitle}>Similar Posts</h3>
         {similarPosts && similarPosts.length > 0
           ? similarPosts.map(post => (
             <Link key={post.title} href={`/blog/${post.title}`}>
@@ -29,13 +29,13 @@ const BlogSidebar = ({ category, currentBlog, blogPosts }) => {
         }
       </div>
       <div className={styles.section}>
-        <h3>Recent Posts</h3>
+        <h3 className={styles.sectionTitle}>Recent Posts</h3>
         {recentPosts && recentPosts.length > 0
           ? recentPosts.map(post => (
-            <Link key={post.title} href={`/blog/${post.title}`}>
-              <div>
-                <h4>{post.title}</h4>
-                <p>{post.tagline}</p>
+            <Link className={styles.postLink} key={post.title} href={`/blog/${post.title}`}>
+              <div className={styles.blogPost}>
+                <h4 className={styles.postTitle}>{post.title}</h4>
+                <p className={styles.postInfo}>{post.tagline}</p>
               </div>
             </Link>
           ))

@@ -4,8 +4,32 @@
   padding: 20px 10px;
 }
 
+.section:first-child {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  margin-bottom: .5rem;
+}
+
+.postLink {
+  cursor: pointer !important;
+}
+
+.blogPost {
+  margin-bottom: .75rem;
+}
+
+.postTitle {
+  color: #383838;
+}
+
+.postInfo {
+  color: #4e4e4e;
+}
+
 @media (min-width: 768px) {
   .sidebar {
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
   }
 }
