@@ -27,9 +27,3 @@
 .postInfo {
   color: #4e4e4e;
 }
-
-@media (min-width: 768px) {
-  .sidebar {
-    /* margin-top: 10rem; */
-  }
-}

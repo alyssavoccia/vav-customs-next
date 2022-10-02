@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CartContext from "../context/cart/CartContext";
@@ -9,6 +9,16 @@ import styles from '../styles/MainNav.module.css';
 
 const MainNav = () => {
   const { dispatch, totalItemsInCart } = useContext(CartContext);
+  const [safari, setSafari] = useState(false);
+
+  useEffect(() => {
+    if (global.navigator.userAgent.toLowerCase().includes('safari')) {
+      console.log('here')
+      setSafari(true);
+    }
+  }, []);
+
+  console.log();
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarContent}>
@@ -37,7 +47,7 @@ const MainNav = () => {
             </li>
             <div className={styles.viewCart} onClick={() => dispatch({ type: 'OPEN_CART' })}>
               <FontAwesomeIcon className={styles.CartIcon} icon={faCartShopping} />
-              <span className={styles.cartCount}>{totalItemsInCart}</span>
+              <span className={`${styles.cartCount} ${safari && styles.safariCart}`}>{totalItemsInCart}</span>
             </div>
           </ul>
           <div className={styles.toggler}>
