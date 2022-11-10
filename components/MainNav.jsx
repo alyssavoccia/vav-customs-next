@@ -13,7 +13,6 @@ const MainNav = () => {
 
   useEffect(() => {
     if (global.navigator.userAgent.toLowerCase().includes('safari')) {
-      console.log('here')
       setSafari(true);
     }
   }, []);

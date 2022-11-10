@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const fetchCheckout = async (checkoutId) => {
-    client.checkout.fetch(checkoutId).then((checkout) => {
+    client.checkout.fetch(checkoutId).then((checkout) => { 
       dispatch({ type: 'CHECKOUT_FOUND', payload: checkout });
       updateCartItemsLength(checkout);
     });

@@ -1,0 +1,8 @@
+.adminNav {
+  background-color: #222;
+  min-height: 100vh;
+  margin-right: 75px;
+  position: fixed;
+  width: 64px;
+  z-index: 100;
+}

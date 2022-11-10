@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from 'next/link';
 import Image from "next/image";
@@ -19,6 +19,11 @@ const BlogPost = (props) => {
       const currentBlog = blogPosts.filter(item => item.title === currentTitle);
       setBlogPost(currentBlog[0]);
       if (blogPost) {
+        const date = new Date(blogPost.timestamp.seconds * 1000);
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        const year = date.getFullYear();
+        setBlogDate(`${month}/${day}/${year}`);
         setLoading(false);
       }
     }
@@ -35,7 +40,7 @@ const BlogPost = (props) => {
         <article className={styles.blogPostContent}>
           <div className={styles.blogPostHeader}>
             <h1 className={styles.blogPostTitle}>{blogPost.title}</h1>
-            <span className={styles.blogPostInfo}>{blogPost.category} | </span>
+            <span className={styles.blogPostInfo}>{blogPost.category} | {blogDate}</span>
           </div>
           <div className={styles.blogPostImg}>
             <Image src={blogPost.imgUrl} width={1200} height={500} objectFit='cover' alt="Blog post image" />
