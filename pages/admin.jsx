@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useRouter } from "next/router";
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase';
+import SignIn from '../components/admin/SignIn';
 
 const Admin = () => {
   const router = useRouter();
@@ -21,7 +22,9 @@ const Admin = () => {
   }, [isMounted]);
 
   return (
-    <div>Admin</div>
+    <section>
+      <SignIn />
+    </section>
   )
 }
 
