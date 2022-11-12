@@ -17,6 +17,7 @@
 }
 
 .header img {
+  height: auto;
   width: 100px !important;
 }
 
