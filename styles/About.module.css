@@ -25,13 +25,17 @@
 .topImage {
   grid-row: 1;
   grid-column: 3 / -1;
+  height: auto;
   padding-top: 40%;
+  width: 100%;
   z-index: 1;
 }
 
 .bottomImage {
   grid-column: 1 / span 3;
   grid-row: 1;
+  height: auto;
+  width: 100%;
 }
 
 .titleContainer {

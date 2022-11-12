@@ -5,6 +5,8 @@ import Products from '../components/shopify/Products';
 
 const Store = (props) => {
   const [selected, setSelected] = useState('all');
+  const allProducts = props.products
+  // console.log(props)
 
   const list = [
     {
@@ -48,7 +50,7 @@ const Store = (props) => {
             <li key={item.title} className={`${item.id === selected && styles.active}`} onClick={() => setSelected(item.id)}>{item.title}</li>
           ))}
         </ul>
-        <Products products={props.products} selectedProducts={selected} />
+        <Products products={allProducts} selectedProducts={selected} />
       </div>
     </section>
   )

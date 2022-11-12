@@ -16,9 +16,7 @@ const CustomBuild = () => {
             <h1 className="section-title">Custom Build</h1>
           </div>
           <p className={styles.description}>Have a custom build that you're looking for? Fill out the form below to get started!</p>
-          <Link href='/#gallery'>
-            <a className={styles.galleryLink}>Check out my work</a>
-          </Link>
+          <Link className={styles.galleryLink} href='/#gallery'>Check out my work</Link>
           <form className={styles.form}>
             <input className={styles.formInput} type='text' id='name' name='user_name' placeholder='Name' />
             <input className={styles.formInput} type='email' id='email' name='email' placeholder='Email' />

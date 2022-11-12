@@ -5,9 +5,7 @@ import styles from '../styles/Hero.module.css';
 const Hero = () => {
   return (
     <section className={styles.hero}>
-      <div className={styles.logoContainer}>
-        <Image src={HeroLogo} alt='VAV Customs Logo' />
-      </div>
+      <Image className={styles.logo} src={HeroLogo} alt='VAV Customs Logo' />
     </section>
   )
 }

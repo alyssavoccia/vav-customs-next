@@ -35,7 +35,7 @@ const BlogPost = (props) => {
 
   return (
     <section className={`${styles.container} page-section`}>
-      <Link href='/blog'><a className='btn btn-secondary'>Back to Blog Posts</a></Link>
+      <Link className="btn btn-secondary" href='/blog'>Back to Blog Posts</Link>
       <div className={styles.blogPost}>
         <article className={styles.blogPostContent}>
           <div className={styles.blogPostHeader}>

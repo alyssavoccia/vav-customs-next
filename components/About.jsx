@@ -9,12 +9,8 @@ const About = () => {
     <section id='about' className={styles.about}>
       <div className={styles.content}>
         <div className={styles.imageStack}>
-          <div className={styles.topImage}>
-            <Image src={topImage} alt='Photo of Vince' />
-          </div>
-          <div className={styles.bottomImage}>
-            <Image src={bottomImage} alt='Photo of Vince on a boat' />
-          </div>
+          <Image className={styles.topImage} src={topImage} alt='Photo of Vince' />
+          <Image className={styles.bottomImage} src={bottomImage} alt='Photo of Vince on a boat' />
         </div>
         <div className={styles.info}>
           <div className={styles.titleContainer}>

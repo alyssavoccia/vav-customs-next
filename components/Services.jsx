@@ -36,9 +36,7 @@ const Services = () => {
               <p className={styles.shopInfoTitle}>Want to see what goes on behind the scenes?</p>
               <p>See the shop setup, what tools I use, and what I recommend to get started!</p>
             </div>
-            <Link href='#'>
-              <a className='btn btn-primary'>Check out The Shop!</a>
-            </Link>
+            <Link className='btn btn-primary' href='#'>Check out The Shop!</Link>
           </div>
         </div>
       </div>
