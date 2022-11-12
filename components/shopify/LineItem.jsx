@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Image from 'next/image';
-import { updateTotalItemsInCart, updateQuantityInCart, removeLineItemInCart } from '../../context/cart/CartActions';
+import { updateTotalItemsInCart, updateQuantityInCart, removeLineItemInCart } from '../../context/cart/cartActions';
 import CartContext from '../../context/cart/CartContext';
 import styles from '../../styles/LineItem.module.css';
 
