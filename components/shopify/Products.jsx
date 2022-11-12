@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Product from './Product';
-import styles from '../../styles/Products.module.css'
+import styles from '../../styles/Products.module.css';
 
 const Products = ({ products, selectedProducts }) => {
   const [showProducts, setShowProducts] = useState(products);
