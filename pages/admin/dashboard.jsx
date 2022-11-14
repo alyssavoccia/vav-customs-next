@@ -1,4 +1,5 @@
-import { auth } from '../../firebase';
+// import { auth } from '../../firebase';
+import { getAuth } from "firebase/auth"
 
 const Dashboard = () => {
   return (
@@ -7,7 +8,9 @@ const Dashboard = () => {
 }
 
 export const getServerSideProps = () => {
-  if (!auth.user) {
+  const auth = getAuth();
+  
+  if (!auth.currentUser) {
     return {
       redirect: { destination: '/admin', permanent: false}
     }

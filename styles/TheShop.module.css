@@ -12,11 +12,12 @@
 
 .content {
   margin: 2rem 0;
+  text-align: center;
 }
 
-.imagesContainer {
-  margin: 0 auto;
-  width: 50%;
+.content img {
+  height: auto;
+  width: 60%;
 }
 
 .favorites,

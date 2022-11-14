@@ -10,9 +10,7 @@ const TheShop = () => {
           <h1 className="section-title">The Shop</h1>
         </div>
         <div className={styles.content}>
-          <div className={styles.imagesContainer}>
-            <Image src={theShop} alt='Different woodworking tools hanging on the wall.' />
-          </div>
+          <Image src={theShop} alt='Different woodworking tools hanging on the wall.' />
           <div className={styles.favorites}>
             <div className={styles.favoritesTitleContainer}>
               <h2 className='section-subtitle'>Tools in the Shop</h2>

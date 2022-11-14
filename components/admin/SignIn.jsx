@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { toast } from 'react-toastify';
-import { auth } from '../../firebase';
 import Image from 'next/image';
 import miniDarkLogo from '../../static/mini-logo-dark.png';
 import styles from '../../styles/SignIn.module.css';
@@ -21,11 +20,13 @@ const SignIn = () => {
   };
 
   const onSubmit = async (e) => {
+    console.log('here')
     e.preventDefault();
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const auth = getAuth();
 
+      await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
       toast.error('Incorrect login information');
     } 
