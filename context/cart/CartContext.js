@@ -2,7 +2,7 @@
 import { createContext, useEffect, useReducer } from "react";
 import { cartReducer } from './cartReducer';
 import { client } from "../../utils/shopifyStore";
-import { updateTotalItemsInCart } from "./cartActions.js";
+import { updateTotalItemsInCart } from "./cartActions";
 
 const CartContext = createContext();
 
