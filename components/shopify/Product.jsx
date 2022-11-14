@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import Image from 'next/image';
 import CartContext from '../../context/cart/CartContext';
-import { addItemToCart, updateTotalItemsInCart } from '../../context/cart/cartActions';
+import { addItemToCart, updateTotalItemsInCart } from '../../context/cart/cartActions.js';
 import styles from '../../styles/Product.module.css';
 
 const Product = (props) => {

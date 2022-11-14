@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Image from 'next/image';
-import { updateTotalItemsInCart, updateQuantityInCart, removeLineItemInCart } from '../../context/cart/cartActions';
+import { updateTotalItemsInCart, updateQuantityInCart, removeLineItemInCart } from '../../context/cart/cartActions.js';
 import CartContext from '../../context/cart/CartContext';
 import styles from '../../styles/LineItem.module.css';
 
@@ -47,7 +47,7 @@ const LineItem = (props) => {
             <button className={styles.quantityUpdate} onClick={() => incrementQuantity(props.line_item.id)}>+</button>
           </div>
           <span className={styles.price}>
-            $ {(props.line_item.quantity * props.line_item.variant.price).toFixed(2)}
+            $ {(props.line_item.quantity * props.line_item.variant.price.amount).toFixed(2)}
           </span>
           <button className={styles.remove} onClick={() => removeLineItem(props.line_item.id)}>×</button>
         </div>
