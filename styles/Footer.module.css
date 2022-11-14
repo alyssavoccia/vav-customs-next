@@ -30,3 +30,9 @@
 .socialIcons svg {
   padding: 1rem;
 }
+
+@media (max-width: 396px) {
+  .title {
+    text-align: center;
+  }
+}
