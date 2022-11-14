@@ -45,10 +45,10 @@ const CustomBuild = () => {
           </div>
         </div>
         <div className={styles.imageSection}>
-          <Image src='/static/grid-images/bathroom2.jpeg' width={2710} height={3613} layout='responsive' alt='Custom wood coffee table' />
+          <Image src='/static/grid-images/bathroom2.jpeg' width={2710} height={3613} alt='Custom wood coffee table' />
           <div className={styles.whyBlockImages}>
-            <Image src='/static/grid-images/vanity1.jpg' width={4032} height={3024} layout='responsive' objectFit='cover' alt='Custom wood vanity in the bathroom' />
-            <Image src='/static/grid-images/mirror1.jpg' width={3024} height={4032} layout='responsive' alt='Custom wooden bathroom set with vanity and mirror' />
+            <Image className={styles.whyBlockImageLeft} src='/static/grid-images/vanity1.jpg' width={4032} height={3024} alt='Custom wood vanity in the bathroom' />
+            <Image src='/static/grid-images/mirror1.jpg' width={3024} height={4032} alt='Custom wooden bathroom set with vanity and mirror' />
           </div>
         </div>
       </section>
