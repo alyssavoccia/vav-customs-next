@@ -34,22 +34,22 @@ const MainNav = () => {
       <div className={styles.linksCart}>
         <ul className={active}>
           <li>
-            <Link href='/#about'>About</Link>
+            <Link onClick={navToggle} href='/#about'>About</Link>
           </li>
           <li>
-            <Link href='/#gallery'>Gallery</Link>
+            <Link onClick={navToggle} href='/#gallery'>Gallery</Link>
           </li>
           <li>
-            <Link href='/the-shop'>The Shop</Link>
+            <Link onClick={navToggle} href='/the-shop'>The Shop</Link>
           </li>
           <li>
-            <Link href='/blog'>Blog</Link>
+            <Link onClick={navToggle} href='/blog'>Blog</Link>
           </li>
           <li>
-            <Link href='/custom-build'>Custom Build</Link>
+            <Link onClick={navToggle} href='/custom-build'>Custom Build</Link>
           </li>
           <li>
-            <Link href='/store'>Store</Link>
+            <Link onClick={navToggle} href='/store'>Store</Link>
           </li>
         </ul>
         <div className={styles.viewCart} onClick={() => dispatch({ type: 'OPEN_CART' })}>

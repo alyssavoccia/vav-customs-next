@@ -12,6 +12,7 @@ const Admin = () => {
     if (isMounted) {
       onAuthStateChanged(auth, (user) => {
         if (user) {
+          console.log('logged in')
           router.push('/admin/dashboard');
         } else {
           router.push('/admin');
